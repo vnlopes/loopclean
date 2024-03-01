@@ -8,15 +8,33 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="box-check">
-        <div class="banho">
-            <img src="img/como-dar-banho-em-cachorro2.jpg" alt="">
-            <input type="checkbox" name="" id="banho-ck">
+    <main>
+        <div class="box-check">
+            <div class="banho">
+                <img src="img/como-dar-banho-em-cachorro2.jpg" alt="">
+               <div class="check"><span>R$80</span> <input type="checkbox" name="" id="banho-ck"></div>
+            </div>
+            <div class="tosa">
+                <img src="img/tosa.jpg" alt="">
+                <div class="check">
+                    <span>R$100</span><input type="checkbox" onclick="check()" name="" id="tosa-ck">
+                </div>
+            </div>
         </div>
-        <div class="tosa">
-            <img src="img/tosa.jpg" alt="">
-            <input type="checkbox" name="" id="tosa-ck">
-        </div>
-    </div>
+        <button onclick="check()">Enviar</button>
+        <span class="aq">aquiioiiii</span>
+    </main>
 </body>
+<script>
+    const banho = document.querySelector('#banho-ck')
+    const span = document.querySelector('.aq')
+
+        const check = () => {
+            if(banho.checked == true){
+            span.innerHTML = 80;
+        } else{
+            alert('Selecione uma opção')
+        }
+        }
+</script>
 </html>
