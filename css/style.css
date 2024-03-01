@@ -1,0 +1,14 @@
+body{
+    display: flex;
+    justify-content: center ;
+}
+
+.banho img, .tosa img{
+    width: 400px;
+}
+
+.banho, .tosa{
+    width: 800px;
+    display: flex;
+    justify-content: center;
+}
