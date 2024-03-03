@@ -40,7 +40,7 @@ header{
     justify-content: center;
     border-radius: 8px;
     align-items: center;
-    display: flex;
+    display: none;
     width: 50px;
     height: 50px;
     transition: 0.3s;
@@ -52,9 +52,10 @@ header{
 }
 
 .main-header{
+    transition: 1s;
     display: flex;
     width: 1000px;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .title span{

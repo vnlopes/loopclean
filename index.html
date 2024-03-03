@@ -155,6 +155,8 @@
         "display: flex;";
       const cadTb = document.querySelector(".cadastro").style =
         "display: none;";
+        let boxCar = document.querySelector('.box-car').style = "display: flex;"
+        let mainHeader = document.querySelector('.main-header').style = "justify-content: space-between;"
     };
 
     const cadastro = () => {
@@ -173,11 +175,6 @@
           pessoaAnimal.cachorro;
         const recebeNome = document.querySelector(".recebe-nome").innerHTML =
           pessoaAnimal.pessoa;
-      }
-      if(
-        carrinho
-      ){
-        alert('Não há nada para ver.')
       }
     };
 
@@ -255,7 +252,7 @@
         escovar.checked == false
       ) {
         alert("Você deve selecionar pelomenos uma opção!");
-      }
+      }else{
       console.log(finalValue)
       let soma = document.querySelector(".total-price");
       instant.style = "display: none;"
@@ -263,6 +260,7 @@
       soma.innerHTML = 'R$' + finalValue.toFixed(2);
       let products = document.querySelector('.products').innerHTML = whatProduct;
     }
+  }
 
   </script>
 </html>
