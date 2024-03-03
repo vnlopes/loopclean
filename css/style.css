@@ -250,6 +250,39 @@ button{
     display: none;
 }
 
+@keyframes desaparece {
+    from{
+        opacity: 0%;
+    }50%{
+        opacity: 100%;
+    } to{
+        opacity: 0%;
+    }
+}
+
+#addToCart{
+    opacity: 0;
+    cursor: pointer;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    background-color: #02ac08;
+    height: 40px;
+    width: 200px;
+    border-radius: 8px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    top: 30px;
+}
+
+.aparece{
+    animation: desaparece 4s;
+}
+
 .cadastro button{
     cursor: pointer;
     border: none;

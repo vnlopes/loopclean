@@ -22,6 +22,8 @@
     </header>
     <main>
 
+      <div id="addToCart">Adicionado ao carrinho!</div>
+
       <div class="cadastro">
         <img class="bolha" src="img/bolha.png" alt="">
         <span class="cad-rl">CADASTRO REALIZADO!</span>
@@ -188,14 +190,17 @@
 
     const addBanho = () => {
       banho.checked = true;
+      let msgTop = document.querySelector('#addToCart').classList.toggle('aparece');
     };
 
     const addTosa = () => {
       tosa.checked = true;
+      let msgTop = document.querySelector('#addToCart').classList.toggle('aparece');
     };
 
     const addEscovar = () => {
       escovar.checked = true;
+      let msgTop = document.querySelector('#addToCart').classList.toggle('aparece');
     };
 
     const check = () => {
@@ -237,6 +242,7 @@
       if (banho.checked == true) {
         finalValue += 99.99;
         whatProduct += 'Banho;';
+        // let msgTop = document.querySelector('#addToCart').classList.add('aparece')
       }
 
       if (tosa.checked == true) {
