@@ -94,8 +94,36 @@
             </div>
           </div>
         </div>
-        <button onclick="check()">Enviar</button>
-        <span class="aq"></span>
+      </div>
+
+      <!-- divisao -->
+
+      <div class="carrinho">
+        <div class="main-cart">
+          <div class="left">
+            <div class="user-2">
+              <span>NOME DE USUARIO:</span>
+              <span class="recebe-nome">Vinicius</span>
+            </div>
+            <div class="pet-2">
+              <span>NOME DO PET:</span>
+              <span class="recebe-pet">Fred</span>
+            </div>
+            <div class="total-price"><span>Você tem a pagar</span class="aq">R$79</div>
+          </div>
+
+          <!-- right -->
+
+          <div class="right">
+            <div class="vr"></div>
+            <span class="buys">Os serviços escolhidos foram:</span>
+            <span class="products">dad</span>
+          </div>
+
+        </div>
+        <footer>
+          <button class="finnaly-btt" onclick="check()">Enviar</button>
+        </footer>
       </div>
     </main>
   </body>
@@ -109,9 +137,11 @@
     const pet = document.querySelector("#pet");
 
     const main = () => {
-      const instant = document.querySelector('.instant').style = "display: flex;"
-      const cadTb = document.querySelector('.cadastro').style = "display: none;"
-    }
+      const instant = (document.querySelector(".instant").style =
+        "display: flex;");
+      const cadTb = (document.querySelector(".cadastro").style =
+        "display: none;");
+    };
 
     const cadastro = () => {
       if (person.value == "" || pet.value == "") {
@@ -125,6 +155,10 @@
           "display: flex;");
         pessoaAnimal.pessoa = person.value;
         pessoaAnimal.cachorro = pet.value;
+        const recebePet = (document.querySelector(".recebe-pet").innerHTML =
+          pessoaAnimal.cachorro);
+        const recebeNome = (document.querySelector(".recebe-nome").innerHTML =
+          pessoaAnimal.pessoa);
       }
     };
 
