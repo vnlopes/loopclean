@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoopClean</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .title2 span {
+      font-weight: 400;
+    }
+
+    .title2 {
+      font-family: "Inter", sans-serif;
+      font-weight: 900;
+      font-size: 2rem;
+      color: white;
+    }
+
+    a {
+      align-items: center;
+      display: flex;
+      text-decoration: none;
+      color: white;
+      animation: none;
+    }
+
+    .main-header {
+      transition: 1s;
+      display: flex;
+      width: 1000px;
+      justify-content: center;
+    }
+
+    header {
+      top: 0;
+      position: absolute;
+      border-bottom: 1px solid white;
+      width: 1440px;
+      background-color: rgba(20, 83, 219, 1);
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body {
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(
+        45deg,
+        rgb(1, 62, 175) 0%,
+        rgba(20, 83, 219, 1) 41%
+      );
+    }
+
+    .bolha {
+      width: 100px;
+      z-index: 2;
+      position: absolute;
+      left: -50px;
+      top: -60px;
+      animation: float infinite alternate 2s;
+    }
+
+    @keyframes in {
+      0% {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+      30% {
+        opacity: 10%;
+        transform: translateX(0px);
+      }
+      70% {
+        opacity: 100%;
+      }
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(0px);
+      }
+      to {
+        transform: translateY(20px);
+      }
+    }
+
+    main {
+      margin-top: -100px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .title {
+      animation: in 2s;
+      color: white;
+      line-height: 40px;
+      font-family: "Inter", sans-serif;
+      font-weight: 800;
+      font-size: 3rem;
+    }
+    .sub {
+      margin-top: 10px;
+      animation: in 3s;
+      color: rgb(162, 199, 255);
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 1.1rem;
+      width: 300px;
+    }
+  </style>
+  <body>
+    <header>
+      <div class="main-header">
+        <a href="index.html">
+          <div class="title2">Loop<span>Clean</span></div>
+        </a>
+      </div>
+    </header>
+    <main>
+      <img class="bolha" src="img/bolha.png" alt="" />
+      <span class="title"
+        >Seu cão está em <br />
+        boas mãos.</span
+      >
+      <span class="sub">Agradecemos a sua confiança ao nosso trabalho!</span>
+    </main>
+  </body>
+</html>
