@@ -1,25 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.instant{
+    display: none;
+}
 body{
+    height: 100vh;
     display: flex;
     justify-content: center ;
-    height: 100vh;
     align-items: center;
+    background-color:  rgba(0,48,134,1);
 }
 
-.banho img, .tosa img{
-    width: 400px;
+.banho img, .tosa img, .escovar img{
+    border-radius: 15px;
+    height: 160px;
+    width: 250px;
+    user-select: none;
+    box-shadow: rgba(0, 0, 0, 0.39) 0 5px 10px;
+    border: 3px solid #0094FF;
 }
 
-.banho, .tosa{
-    width: 800px;
+.banho img{
+    object-fit: cover;
+}
+
+.tosa img{
+    object-fit: cover;
+}
+
+.escovar img{
+    object-fit: cover;
+}
+
+.banho, .tosa, .escovar{
+    padding: 30px;
+    flex-direction: column;
+    width: 250px;
+    height: 380px;
     display: flex;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.39) 0 5px 5px;
+}
+
+.check{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.ck{
+    opacity: 0;
+}
+
+.add-cart{
+    cursor: pointer;
+    width: 180px;
+    background-color: #0094FF;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.price span{
+    font-size: 0.9rem;
+}
+
+.price{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.selo{
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    background-color: #FF6B00;
+    height: 30px;
+    width: 120px;
+    border-radius: 8px;
+    color: white;
     justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.selo-green{
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    background-color: #009D06;
+    height: 30px;
+    width: 120px;
+    border-radius: 8px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.text{
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
 }
 
 main{
+    width: 1440px;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,48,134,1) 0%, rgba(20,83,219,1) 41%);
     display: flex;
     flex-direction: column;
     gap: 30px;
     align-items: center;
+    justify-content: center;
 }
 
 button{
@@ -28,9 +133,140 @@ button{
 
 .box-check{
     display: flex;
-    gap: 30px;
     height: 100%;
     align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* cadastro de usuario/pet */
+
+.cadastro{
+    position: relative;
+    display: none;
+    border-radius: 15px;
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.39) 0 5px 5px;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+
+.cad-rl{
+    top: 25px;
+    z-index: 2;
+    color: #02ac08;
+    position: absolute;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    display: none;
+}
+
+.cadastro button{
+    cursor: pointer;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    background-color: #02ac08;
+    height: 30px;
+    width: 120px;
+    border-radius: 8px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.user, .pet{
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: #346adf;
+    position: relative;
+}
+
+.user span, .pet span{
+    background-color: white;
+    position: absolute;
+    left: 10px;
+    top: -6px;
+    width: 130px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.pet span{
+    width: 100px;
+}
+
+.cadastro input{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #346adf;
+    padding-left: 10px;
+    width: 300px;
+    height: 30px;
+    border-radius: 8px;
+    border: 3px solid #346adf;
+}
+
+footer svg{
+    fill: white;
+    animation: vaivem 1s infinite alternate;
+    transition: 1s;
+}
+
+.box-arrow span{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.box-arrow{
+    cursor: pointer;
+    align-items: center;
+    display: none;
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding:2px 2px 2px 12px;
+    width: 100px;
+    height: 36px;
+    background-color: #02ac08 ;
+    transition: 0.3s;
+}
+
+.box-arrow:hover{
+    padding: 2px 2px 2px 17px;
+}
+
+@keyframes vaivem {
+    from{
+        transform: translateX(5px);
+    }to{
+        transform: translateX(15px);
+    }
+}
+
+footer{
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    height: 40px;
+    background: linear-gradient(45deg, rgba(0,48,134,1) 0%, rgba(29,85,206,1) 41%);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }

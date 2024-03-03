@@ -1,40 +1,172 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Banho e tosa</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <main>
+      <div class="cadastro">
+        <span class="cad-rl">CADASTRO REALIZADO!</span>
+        <div class="user">
+          <span>NOME DE USUARIO</span>
+          <input id="user" type="text" />
+        </div>
+        <div class="pet">
+          <span>NOME DO PET</span>
+          <input id="pet" type="text" />
+        </div>
+        <button class="bttCad" onclick="cadastro()">Cadastrar</button>
+        <footer>
+          <div onclick="main()" class="box-arrow">
+            <span>Avançar</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="#000000"
+              viewBox="0 0 256 256"
+            >
+              <path
+                d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
+              ></path>
+            </svg>
+          </div>
+        </footer>
+      </div>
+
+      <!-- divisao -->
+
+      <div class="instant">
         <div class="box-check">
-            <div class="banho">
-                <img src="img/como-dar-banho-em-cachorro2.jpg" alt="">
-               <div class="check"><span>R$80</span> <input type="checkbox" name="" id="banho-ck"></div>
+          <div class="banho">
+            <img src="img/como-dar-banho-em-cachorro2.jpg" alt="" />
+            <div class="check">
+              <div class="selo">MAIS VENDIDO</div>
+              <span class="text"
+                >Banho executado com todos os devidos cuidados que o seu pet
+                merece!</span
+              >
+              <div class="price">R$79<span>99</span></div>
+              <button onclick="addBanho()" class="add-cart">
+                Adicionar ao carrinho
+              </button>
+              <input class="ck" type="checkbox" name="" id="banho-ck" />
             </div>
-            <div class="tosa">
-                <img src="img/tosa.jpg" alt="">
-                <div class="check">
-                    <span>R$100</span><input type="checkbox" onclick="check()" name="" id="tosa-ck">
-                </div>
+          </div>
+
+          <!-- divisao -->
+
+          <div class="tosa">
+            <img src="img/tosa.jpg" alt="" />
+            <div class="check">
+              <div class="selo-green">TOSA PREMIUM</div>
+              <span class="text"
+                >Tosa premium feita pelos melhores profissionais para o seu
+                cãozinho!</span
+              >
+              <div class="price">R$79<span>99</span></div>
+              <button onclick="addTosa()" class="add-cart">
+                Adicionar ao carrinho
+              </button>
+              <input class="ck" type="checkbox" name="" id="tosa-ck" />
             </div>
+          </div>
+
+          <!-- divisao -->
+
+          <div class="escovar">
+            <img src="img/escovação.jpg" alt="" />
+            <div class="check">
+              <div class="selo-green">PASTA P/ PET</div>
+              <span class="text"
+                >Banho executado com todos os devidos cuidados que o seu pet
+                merece!</span
+              >
+              <div class="price">R$79<span>99</span></div>
+              <button onclick="addEscovar()" class="add-cart">
+                Adicionar ao carrinho
+              </button>
+              <input class="ck" type="checkbox" name="" id="escovar-ck" />
+            </div>
+          </div>
         </div>
         <button onclick="check()">Enviar</button>
-        <span class="aq">aquiioiiii</span>
+        <span class="aq"></span>
+      </div>
     </main>
-</body>
-<script>
-    const banho = document.querySelector('#banho-ck')
-    const span = document.querySelector('.aq')
+  </body>
 
-        const check = () => {
-            if(banho.checked == true){
-            span.innerHTML = 80;
-        } else{
-            alert('Selecione uma opção')
-        }
-        }
-</script>
+  <script>
+    const banho = document.querySelector("#banho-ck");
+    const escovar = document.querySelector("#escovar-ck");
+    const tosa = document.querySelector("#tosa-ck");
+    const soma = document.querySelector(".aq");
+    const person = document.querySelector("#user");
+    const pet = document.querySelector("#pet");
+
+    const main = () => {
+      const instant = document.querySelector('.instant').style = "display: flex;"
+      const cadTb = document.querySelector('.cadastro').style = "display: none;"
+    }
+
+    const cadastro = () => {
+      if (person.value == "" || pet.value == "") {
+        alert("Preencha os campos corretamente!");
+      } else {
+        const msgCad = (document.querySelector(".cad-rl").style =
+          "display: flex;");
+        const bttCad = (document.querySelector(".bttCad").style =
+          "visibility: hidden;");
+        const bttMain = (document.querySelector(".box-arrow").style =
+          "display: flex;");
+        pessoaAnimal.pessoa = person.value;
+        pessoaAnimal.cachorro = pet.value;
+      }
+    };
+
+    let pessoaAnimal = [(pessoa = ""), (cachorro = "")];
+
+    console.log(pessoaAnimal);
+
+    const addBanho = () => {
+      banho.checked = true;
+    };
+
+    const addTosa = () => {
+      tosa.checked = true;
+    };
+
+    const addEscovar = () => {
+      escovar.checked = true;
+    };
+
+    const check = () => {
+      let finalValue = 0;
+
+      if (banho.checked == true) {
+        finalValue += 99.99;
+      }
+
+      if (tosa.checked == true) {
+        finalValue += 79.99;
+      }
+
+      if (escovar.checked == true) {
+        finalValue += 29.99;
+      }
+
+      if (
+        banho.checked == false &&
+        tosa.checked == false &&
+        escovar.checked == false
+      ) {
+        alert("Você deve selecionar pelomenos uma opção!");
+      }
+      soma.innerHTML = finalValue;
+    };
+  </script>
 </html>
