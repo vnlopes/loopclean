@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <header>
+      <div class="main-header">
+        <a href="index.html">
+          <div class="title">
+            Loop<span>Clean</span>
+          </div>
+        </a>
+        <div onclick="partTwo()" class="box-car">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"></path></svg>
+        </div>
+      </div>
+    </header>
     <main>
       <div class="cadastro">
         <span class="cad-rl">CADASTRO REALIZADO!</span>
@@ -79,7 +91,7 @@
           <!-- divisao -->
 
           <div class="escovar">
-            <img src="img/escovação.jpg" alt="" />
+            <img class="escovacao" src="img/escovação.jpg" alt="" />
             <div class="check">
               <div class="selo-green">PASTA P/ PET</div>
               <span class="text"
@@ -99,17 +111,18 @@
       <!-- divisao -->
 
       <div class="carrinho">
+        <svg class="market-car" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"></path></svg>
         <div class="main-cart">
           <div class="left">
             <div class="user-2">
               <span>NOME DE USUARIO:</span>
-              <span class="recebe-nome">Vinicius</span>
+              <span class="recebe-nome"></span>
             </div>
             <div class="pet-2">
               <span>NOME DO PET:</span>
-              <span class="recebe-pet">Fred</span>
+              <span class="recebe-pet"></span>
             </div>
-            <div class="total-price"><span>Você tem a pagar</span class="aq">R$79</div>
+            <div><span class="text-eff">Você tem a pagar:</span><span class="total-price"></span></div>
           </div>
 
           <!-- right -->
@@ -117,12 +130,12 @@
           <div class="right">
             <div class="vr"></div>
             <span class="buys">Os serviços escolhidos foram:</span>
-            <span class="products">dad</span>
+            <span class="products"></span>
           </div>
 
         </div>
         <footer>
-          <button class="finnaly-btt" onclick="check()">Enviar</button>
+          <button class="finnaly-btt" onclick="check()">Prosseguir</button>
         </footer>
       </div>
     </main>
@@ -132,35 +145,42 @@
     const banho = document.querySelector("#banho-ck");
     const escovar = document.querySelector("#escovar-ck");
     const tosa = document.querySelector("#tosa-ck");
-    const soma = document.querySelector(".aq");
     const person = document.querySelector("#user");
     const pet = document.querySelector("#pet");
+    const instant = document.querySelector(".instant")
+    const carrinho = document.querySelector(".carrinho")
 
     const main = () => {
-      const instant = (document.querySelector(".instant").style =
-        "display: flex;");
-      const cadTb = (document.querySelector(".cadastro").style =
-        "display: none;");
+      const instant = document.querySelector(".instant").style =
+        "display: flex;";
+      const cadTb = document.querySelector(".cadastro").style =
+        "display: none;";
     };
 
     const cadastro = () => {
       if (person.value == "" || pet.value == "") {
         alert("Preencha os campos corretamente!");
       } else {
-        const msgCad = (document.querySelector(".cad-rl").style =
-          "display: flex;");
-        const bttCad = (document.querySelector(".bttCad").style =
-          "visibility: hidden;");
-        const bttMain = (document.querySelector(".box-arrow").style =
-          "display: flex;");
+        const msgCad = document.querySelector(".cad-rl").style =
+          "display: flex;";
+        const bttCad = document.querySelector(".bttCad").style =
+          "visibility: hidden;";
+        const bttMain = document.querySelector(".box-arrow").style =
+          "display: flex;";
         pessoaAnimal.pessoa = person.value;
         pessoaAnimal.cachorro = pet.value;
-        const recebePet = (document.querySelector(".recebe-pet").innerHTML =
-          pessoaAnimal.cachorro);
-        const recebeNome = (document.querySelector(".recebe-nome").innerHTML =
-          pessoaAnimal.pessoa);
+        const recebePet = document.querySelector(".recebe-pet").innerHTML =
+          pessoaAnimal.cachorro;
+        const recebeNome = document.querySelector(".recebe-nome").innerHTML =
+          pessoaAnimal.pessoa;
+      }
+      if(
+        carrinho
+      ){
+        alert('Não há nada para ver.')
       }
     };
+
 
     let pessoaAnimal = [(pessoa = ""), (cachorro = "")];
 
@@ -179,18 +199,54 @@
     };
 
     const check = () => {
+      // let soma = document.querySelector(".total-price");
+      // let finalValue = 0;
+      // let whatProduct = '';
+
+      // if (banho.checked == true) {
+      //   finalValue += 99.99;
+      //   whatProduct += 'Banho;';
+      // }
+
+      // if (tosa.checked == true) {
+      //   finalValue += 79.99;
+      //   whatProduct += ' Tosa;';
+      // }
+
+      // if (escovar.checked == true) {
+      //   finalValue += 29.99;
+      //   whatProduct += ' Escovação.';
+      // }
+
+      // if (
+      //   banho.checked == false &&
+      //   tosa.checked == false &&
+      //   escovar.checked == false
+      // ) {
+      //   alert("Você deve selecionar pelomenos uma opção!");
+      // }
+      // console.log(finalValue)
+      // soma.innerHTML = 'R$' + finalValue.toFixed(2);
+      // let products = document.querySelector('.products').innerHTML = whatProduct;
+    };
+
+    const partTwo = () => {
       let finalValue = 0;
+      let whatProduct = '';
 
       if (banho.checked == true) {
         finalValue += 99.99;
+        whatProduct += 'Banho;';
       }
 
       if (tosa.checked == true) {
         finalValue += 79.99;
+        whatProduct += ' Tosa;';
       }
 
       if (escovar.checked == true) {
         finalValue += 29.99;
+        whatProduct += ' Escovação.';
       }
 
       if (
@@ -200,7 +256,13 @@
       ) {
         alert("Você deve selecionar pelomenos uma opção!");
       }
-      soma.innerHTML = finalValue;
-    };
+      console.log(finalValue)
+      let soma = document.querySelector(".total-price");
+      instant.style = "display: none;"
+      carrinho.style = "display: flex"
+      soma.innerHTML = 'R$' + finalValue.toFixed(2);
+      let products = document.querySelector('.products').innerHTML = whatProduct;
+    }
+
   </script>
 </html>

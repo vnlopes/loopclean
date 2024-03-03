@@ -9,11 +9,63 @@
     display: none;
 }
 body{
-    height: 100vh;
+    flex-direction: column;
+    min-height: 100vh;
     display: flex;
     justify-content: center ;
     align-items: center;
     background-color:  rgba(0,48,134,1);
+    overflow-x: hidden;
+}
+
+header{
+    border-bottom: 1px solid white;
+    width: 1440px;
+    background-color: rgba(20,83,219,1);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-header svg path{
+    width: 100%;
+}
+
+.main-header svg{
+    fill: white;
+}
+
+.box-car{
+    justify-content: center;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.box-car:hover{
+    background-color: #0000001f;
+}
+
+.main-header{
+    display: flex;
+    width: 1000px;
+    justify-content: space-between;
+}
+
+.title span{
+    font-weight: 400;
+}
+
+.title{
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: white;
 }
 
 .banho img, .tosa img, .escovar img{
@@ -33,7 +85,9 @@ body{
     object-fit: cover;
 }
 
-.escovar img{
+.escovacao{
+    height: 160px;
+    width: 250px;
     object-fit: cover;
 }
 
@@ -116,9 +170,16 @@ body{
     font-size: 0.8rem;
 }
 
+a{
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+
 main{
     width: 1440px;
-    height: 100%;
+    min-height: 100vh;
     background: linear-gradient(45deg, rgba(0,48,134,1) 0%, rgba(20,83,219,1) 41%);
     display: flex;
     flex-direction: column;
@@ -144,7 +205,7 @@ button{
 
 .cadastro{
     position: relative;
-    display: none;
+    display: flex;
     border-radius: 15px;
     width: 400px;
     height: 300px;
@@ -275,7 +336,7 @@ footer{
 
 .carrinho{
     position: relative;
-    display: flex;
+    display: none;
     border-radius: 15px;
     width: 400px;
     height: 300px;
@@ -304,6 +365,7 @@ footer{
     color: #346adf;
     position: relative;
 }
+
 
 .main-cart{
     height: 50%;
@@ -337,16 +399,23 @@ footer{
     width: 110px;
 }
 
-.total-price span{
-    font-size: 0.5rem;
+.text-eff{
+    font-size: 0.7rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
 }
 
 .total-price{
+    transition: 0.3s;
     flex-direction: column;
     display: flex;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 2rem;
+}
+
+.recebe-nome, .recebe-pet{
+    color: #000000;
 }
 
 .left{
@@ -385,4 +454,10 @@ footer{
     width: 50%;
     flex-direction: column;
     display: flex;
+}
+
+.market-car{
+    position: absolute;
+    top: 20px;
+    left: 30px;
 }
