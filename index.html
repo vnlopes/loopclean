@@ -22,7 +22,9 @@
     </header>
     <main>
 
-      <div id="addToCart">Adicionado ao carrinho!</div>
+      <div id="addToCart-banho">Adicionado ao carrinho!</div>
+      <div id="addToCart-tosa">Adicionado ao carrinho!</div>
+      <div id="addToCart-escova">Adicionado ao carrinho!</div>
 
       <div class="cadastro">
         <img class="bolha" src="img/bolha.png" alt="">
@@ -190,17 +192,17 @@
 
     const addBanho = () => {
       banho.checked = true;
-      let msgTop = document.querySelector('#addToCart').classList.toggle('aparece');
+      let msgTop = document.querySelector('#addToCart-banho').classList.add('aparece');
     };
 
     const addTosa = () => {
       tosa.checked = true;
-      let msgTop = document.querySelector('#addToCart').classList.toggle('aparece');
+      let msgTop = document.querySelector('#addToCart-tosa').classList.add('aparece');
     };
 
     const addEscovar = () => {
       escovar.checked = true;
-      let msgTop = document.querySelector('#addToCart').classList.toggle('aparece');
+      let msgTop = document.querySelector('#addToCart-escova').classList.add('aparece');
     };
 
     const check = () => {
