@@ -38,8 +38,7 @@ body{
 
 header{
     border-bottom: 1px solid white;
-    width: 1440px;
-    background-color: rgba(20,83,219,1);
+    width: 100vw;
     height: 70px;
     display: flex;
     justify-content: center;
